@@ -19,7 +19,7 @@ Installation
 
 Clone the repository:
 
-**git clone https://github.com/yourusername/nodejs-sql-cloudinary-api.git**
+**git clone https://github.com/suryateja20031104/WellnessZ-work.git**(#https://github.com/suryateja20031104/WellnessZ-work.git)
 
 Navigate into the project directory:
 
