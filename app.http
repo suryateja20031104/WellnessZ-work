@@ -1,0 +1,13 @@
+GET http://localhost:3000/getData
+
+###
+
+POST http://localhost:3000/insertPost/
+Content-Type: application/json
+
+{
+  "title": "Vintage car exhibition",
+  "desc": "Step back in time and admire classic automobiles from different eras",
+  "tag":"cars, vintage, exhibition",
+  "image":"https://res.cloudinary.com/dvy5o4qjm/image/upload/v1714660017/oldtimer-1197800_640_kzkj4c.jpg"
+}
