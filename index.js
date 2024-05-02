@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const multer = require("multer");
+const cloudinary = require("cloudinary").v2;
 const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
 const app = express();
@@ -8,6 +10,12 @@ const dbPath = path.join(__dirname, "posts.db");
 app.use(express.json());
 app.use(cors());
 let db = null;
+
+cloudinary.config({
+  cloud_name: "du5wvdvd8",
+  api_key: "291238227498695",
+  api_secret: "_TmoLElMias7jFTEyTX9laMB6Zw",
+});
 
 const initializeDBAndServer = async () => {
   try {
@@ -59,7 +67,15 @@ app.get("/ownChoice/", async (request, response) => {
   response.send(postDetailsArray);
 });
 
-app.post("/insertPost", async (request, response) => {
+const storage = multer.diskStorage({
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
+
+app.post("/insertPost", upload.single("image"), async (request, response) => {
   const postDetails = request.body;
   const { title, desc, tag, image } = postDetails;
 
@@ -72,4 +88,19 @@ app.post("/insertPost", async (request, response) => {
 
   const dbResponse = await db.run(addQuery);
   response.send({ info: "inserted data successfully" });
+});
+
+app.post("/postImage", upload.single("image"), async (request, response) => {
+  try {
+    const result = await cloudinary.uploader.upload(req.file.path);
+    response.status(201).json({
+      message: "Image uploaded to Cloudinary successfully.",
+      imageUrl: result.secure_url,
+    });
+  } catch (error) {
+    console.error(error);
+    response
+      .status(500)
+      .json({ error: "Error uploading image to Cloudinary." });
+  }
 });
