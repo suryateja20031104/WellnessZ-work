@@ -76,6 +76,8 @@ http://localhost:3000/postImage
 
 ## LIVE LINK PUBLISHED
 
+note: when you paste it and run in google chrome or postman it will take some time to load as i deployed on render for free
+
 https://wellnessz-work.onrender.com/getData
 
 https://wellnessz-work.onrender.com/ownChoice/?order=DESC
