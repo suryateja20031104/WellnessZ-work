@@ -35,3 +35,45 @@ Running Project:
 
 **node index.js**
 
+## POSTMAN samples
+
+**Getting the Data from Database table Post:**
+
+http://localhost:3000getData
+
+**Getting the Data from Database in DESC:**
+
+http://localhost:3000/ownChoice/?order=DESC
+
+**Getting the Data from Database of 5 rows only and in desc order:**
+
+http://localhost:3000/ownChoice/?limit=5&order=DESC
+
+**Getting the Data from Database of 5 row order by description:**
+
+http://localhost:3000/ownChoice/?limit=5&order_by=desc
+
+
+**Getting the Data from Database based on tag:**
+
+http://localhost:3000/ownChoice/?tag_by=nature
+
+
+**posting the data into database collection post:**
+
+http://localhost:3000/insertPost/
+
+{
+  "title": "Vintage car exhibition",
+  "desc": "Step back in time and admire classic automobiles from different eras",
+  "tag":"cars, vintage, exhibition",
+  "image":"https://res.cloudinary.com/dvy5o4qjm/image/upload/v1714660017/oldtimer-1197800_640_kzkj4c.jpg"
+}
+
+**posting the image into cloud service cloudinary**
+
+http://localhost:3000/postImage
+
+
+
+
