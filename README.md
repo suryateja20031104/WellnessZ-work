@@ -39,7 +39,7 @@ Running Project:
 
 **Getting the Data from Database table Post:**
 
-http://localhost:3000getData
+http://localhost:3000/getData
 
 **Getting the Data from Database in DESC:**
 
@@ -73,6 +73,18 @@ http://localhost:3000/insertPost/
 **posting the image into cloud service cloudinary**
 
 http://localhost:3000/postImage
+
+## LIVE LINK PUBLISHED
+
+https://wellnessz-work.onrender.com/getData
+
+https://wellnessz-work.onrender.com/ownChoice/?order=DESC
+
+https://wellnessz-work.onrender.com/ownChoice/?limit=5&order=DESC
+
+https://wellnessz-work.onrender.com/ownChoice/?limit=5&order_by=desc
+
+https://wellnessz-work.onrender.com/ownChoice/?tag_by=nature
 
 
 
