@@ -92,7 +92,7 @@ app.post("/insertPost", upload.single("image"), async (request, response) => {
 
 app.post("/postImage", upload.single("image"), async (request, response) => {
   try {
-    const result = await cloudinary.uploader.upload(req.file.path);
+    const result = await cloudinary.uploader.upload(request.file.path);
     response.status(201).json({
       message: "Image uploaded to Cloudinary successfully.",
       imageUrl: result.secure_url,
